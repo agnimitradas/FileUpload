@@ -1,7 +1,15 @@
- <form>
-    <div class="form-group">
-        <label for="myFileField">Select a file: </label>
-        <input type="file" demo-file-model="myFile"  class="form-control" id ="myFileField"/>
-    </div>
-    <button ng-click="uploadFile()" class = "btn btn-primary">Upload File</button>
-</form>
+<input type="file" id="myFileInput" />
+<button ng-click="submit()">asd</button>
+<div ng-if="tableFlag">
+    <table id="customers">
+        <tr>
+            <th></th>
+            <th ng-repeat="(key,data) in tableData[0]">{{key}}</th>
+        </tr>
+        <tr ng-repeat="item in tableData track by $index">
+            <td><input type="checkbox" id="checkboxValue" ng-model="item.checked"/> </td>
+            <td ng-repeat="(key,data) in item"> {{data}}</td>
+        </tr>
+    </table>
+    <button ng-click="executeQuery()">Execute</button>
+</div> 
